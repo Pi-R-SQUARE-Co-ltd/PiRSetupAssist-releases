@@ -1,12 +1,22 @@
-# Pi R Setup Assist — Releases
+# Pi R Setup Assist — ไฟล์ติดตั้ง
 
-ตัวติดตั้งอย่างเป็นทางการของ Pi R Setup Assist ผู้ช่วยเตรียมเครื่องสำหรับคอร์สเรียนของ Pi R Academy
+ที่เก็บ **ไฟล์ติดตั้งอย่างเป็นทางการ** ของ Pi R Setup Assist ผู้ช่วยเตรียมเครื่องสำหรับคอร์สเรียนของ Pi R Academy
 
 ดาวน์โหลดรุ่นล่าสุดได้ที่แท็บ [Releases](../../releases/latest)
 
 | แพลตฟอร์ม | ไฟล์ |
 |---|---|
-| macOS 14 ขึ้นไป | `PiRSetupAssist-x.y.zip` (signed + notarized) |
+| macOS 14 ขึ้นไป | `PiRSetupAssist-x.y.zip` (ผ่านการเซ็นและ notarize แล้ว) |
 | Windows | เร็ว ๆ นี้ |
 
 วิธีติดตั้ง (macOS): แตกไฟล์ zip แล้วลาก `PiRSetupAssist.app` ไปไว้ที่โฟลเดอร์ Applications
+
+---
+
+**หมายเหตุเรื่องซอร์สโค้ด**
+
+ที่นี่มีเฉพาะไฟล์ติดตั้งเท่านั้น ไม่มีซอร์สโค้ดของโปรแกรม
+ลิงก์ "Source code (zip / tar.gz)" ที่ GitHub แนบมาให้เองในหน้า Releases จึงมีแค่ไฟล์ README นี้
+ซอร์สโค้ดของโปรแกรมเก็บไว้ในที่เก็บส่วนตัวของบริษัท ไม่เปิดให้ดาวน์โหลด
+
+© PI R SQUARE CO., LTD.

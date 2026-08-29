@@ -16,6 +16,17 @@ Always use the links below. They point at the newest release, so they never chan
 
 You can also browse every version on the [Releases](../../releases) page.
 
+## Which course, and what your computer needs
+
+The app supports two courses and checks the right requirements for whichever one you pick.
+
+| Course | What it needs |
+|---|---|
+| **Claude Code** — Vibe Coding for Business | 4 GB RAM (8 GB recommended), 10 GB free |
+| **Claude Cowork** — Agentic AI for Smart Working | 20 GB free (25 GB recommended). On macOS, an Apple Silicon Mac. On Windows, Hyper-V has to be switched on, and Windows Home only works partly |
+
+Both courses need a Claude plan of Pro or above. The app cannot check that for you.
+
 ## How to install
 
 **macOS** Unzip the file and drag `PiRSetupAssist.app` into your Applications folder, then open it.

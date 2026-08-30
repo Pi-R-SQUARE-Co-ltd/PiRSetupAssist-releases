@@ -11,7 +11,7 @@ Always use the links below. They point at the newest release, so they never chan
 | Platform | Download | Notes |
 |---|---|---|
 | **macOS** 14 or later | [PiRSetupAssist-macOS.zip](../../releases/latest/download/PiRSetupAssist-macOS.zip) | Signed and notarized by Apple |
-| **Windows** 10 build 1809 or later | [PiRSetupAssist-Windows.exe](../../releases/latest/download/PiRSetupAssist-Windows.exe) | **Recommended.** Just download and run |
+| **Windows** 10 or later | [PiRSetupAssist-Windows.exe](../../releases/latest/download/PiRSetupAssist-Windows.exe) | **Recommended.** Just download and run |
 | Windows (alternative) | [PiRSetupAssist-Windows.zip](../../releases/latest/download/PiRSetupAssist-Windows.zip) | For machines where policy blocks `.exe` files |
 
 You can also browse every version on the [Releases](../../releases) page.
@@ -19,13 +19,22 @@ You can also browse every version on the [Releases](../../releases) page.
 ## Which course, and what your computer needs
 
 The app supports two courses and checks the right requirements for whichever one you pick.
+The two courses do not ask for the same things, so a computer can be fine for one and not the other.
 
 | Course | What it needs |
 |---|---|
-| **Claude Code** — Vibe Coding for Business | 4 GB RAM (8 GB recommended), 10 GB free |
-| **Claude Cowork** — Agentic AI for Smart Working | 20 GB free (25 GB recommended). On macOS, an Apple Silicon Mac. On Windows, Hyper-V has to be switched on, and Windows Home only works partly |
+| **Claude Code** — Vibe Coding for Business | 8 GB RAM, 10 GB free. Windows 10 version 1809 or later, or macOS 14 or later |
+| **Claude Cowork** — Agentic AI for Smart Working | 8 GB RAM (16 GB recommended), 20 GB free (25 GB recommended). **Windows 10 version 2004 or later** — higher than the other course — or macOS 14 or later. On Windows the app switches on one system feature for you and asks you to restart once |
 
 Both courses need a Claude plan of Pro or above. The app cannot check that for you.
+
+**Two things worth knowing before you start the Cowork course**
+
+- **Windows on ARM** is officially supported, but a lot of people have reported that the course
+  workspace does not open at all on those machines, and there is no fix yet. If you have a
+  choice of computer, use an Intel or AMD one. The app will tell you if yours is affected.
+- **The workspace grows.** It starts small and can reach around 10 GB over time, and nothing
+  reclaims that space automatically. The app re-checks your free space each time you open it.
 
 ## How to install
 

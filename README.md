@@ -17,10 +17,8 @@ Always use the links below. They point at the newest release, so they never chan
 You can also browse every version on the [Releases](../../releases) page,
 where each version shows its own download count.
 
-[![total downloads](https://img.shields.io/github/downloads/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/total?label=downloads%20all%20versions&color=555)](../../releases)
-[![macOS](https://img.shields.io/github/downloads/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/latest/PiRSetupAssist-macOS.zip?label=macOS%20(latest)&color=informational)](../../releases/latest)
-[![Windows .exe](https://img.shields.io/github/downloads/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/latest/PiRSetupAssist-Windows.exe?label=Windows%20.exe%20(latest)&color=informational)](../../releases/latest)
-[![Windows .zip](https://img.shields.io/github/downloads/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/latest/PiRSetupAssist-Windows.zip?label=Windows%20.zip%20(latest)&color=informational)](../../releases/latest)
+[![downloads](https://img.shields.io/github/downloads/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/total?style=flat-square&label=downloads%20all%20versions&color=444)](../../releases)
+[![downloads latest](https://img.shields.io/github/downloads/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/latest/total?style=flat-square&label=downloads%20latest&color=444)](../../releases/latest)
 
 These counts come straight from GitHub and update on their own.
 

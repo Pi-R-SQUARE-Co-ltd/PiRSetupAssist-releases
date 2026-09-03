@@ -55,10 +55,26 @@ def api(path):
         return json.load(r)
 
 
-def rows_of(assets):
-    """[(ชื่อที่แสดง, ยอด)] เรียงตาม DIST_FILES · ไฟล์ที่ไม่รู้จักไม่นับ"""
+def load_exclude():
+    """ยอดที่ทีมงานโหลดเองและไม่อยากให้นับ · ไม่มีไฟล์ = ไม่หักอะไรเลย"""
+    f = OUT / "exclude.json"
+    if not f.exists():
+        return {}
+    raw = json.loads(f.read_text(encoding="utf-8"))
+    return {k: v for k, v in raw.items() if not k.startswith("_")}
+
+
+def rows_of(assets, skip):
+    """[(ชื่อที่แสดง, ยอด)] เรียงตาม DIST_FILES · หักยอดของทีมงานออกแล้ว
+
+    หักไม่ให้ต่ำกว่าศูนย์ เผื่อกรอกเกินจริงไว้ · ไฟล์ที่ไม่รู้จักไม่นับ
+    """
     got = {a["name"]: a["download_count"] for a in assets}
-    return [(label, got[name]) for name, label in DIST_FILES.items() if name in got]
+    out = []
+    for name, label in DIST_FILES.items():
+        if name in got:
+            out.append((label, max(0, got[name] - skip.get(name, 0))))
+    return out
 
 
 def card(title, right, rows, theme):
@@ -106,9 +122,10 @@ def write(stem, title, right, rows):
 def main():
     OUT.mkdir(exist_ok=True)
     releases = api(f"repos/{REPO}/releases?per_page=100")
+    exclude = load_exclude()
     grand = {}
     for rel in releases:
-        rows = rows_of(rel["assets"])
+        rows = rows_of(rel["assets"], exclude.get(rel["tag_name"], {}))
         write(rel["tag_name"], "downloads", rel["tag_name"], rows)
         for name, n in rows:
             grand[name] = grand.get(name, 0) + n

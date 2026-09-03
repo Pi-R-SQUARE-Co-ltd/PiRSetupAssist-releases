@@ -48,4 +48,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add badges
           git commit -m "Update download counts"
-          git push
+          # ระบุปลายทางให้ชัด **ห้ามใช้ `git push` เปล่า ๆ**
+          # ถ้าวันไหน checkout กลับไปได้ HEAD แบบ detached อีก (เช่นถูกกระตุ้นจาก tag เก่า
+          # ที่ยังถือไฟล์เวิร์กโฟลว์รุ่นก่อนแก้) `git push` เปล่าจะตกทันที ส่วนแบบนี้ยังไปต่อได้
+          git push origin HEAD:main

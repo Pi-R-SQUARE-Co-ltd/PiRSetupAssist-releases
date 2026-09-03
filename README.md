@@ -18,8 +18,8 @@ You can also browse every version on the [Releases](../../releases) page,
 where each version shows its own download count.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-dark.svg">
-  <img src="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-light.svg" alt="Download counts">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-dark.svg?d=2">
+  <img src="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-light.svg?d=2" alt="Download counts">
 </picture>
 
 These counts come from GitHub and are refreshed automatically.

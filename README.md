@@ -17,10 +17,12 @@ Always use the links below. They point at the newest release, so they never chan
 You can also browse every version on the [Releases](../../releases) page,
 where each version shows its own download count.
 
-[![downloads](https://img.shields.io/github/downloads/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/total?style=flat-square&label=downloads%20all%20versions&color=444)](../../releases)
-[![downloads latest](https://img.shields.io/github/downloads/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/latest/total?style=flat-square&label=downloads%20latest&color=444)](../../releases/latest)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-dark.svg">
+  <img src="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-light.svg" alt="Download counts" width="300">
+</picture>
 
-These counts come straight from GitHub and update on their own.
+These counts come from GitHub and are refreshed automatically.
 
 ## Which course, and what your computer needs
 

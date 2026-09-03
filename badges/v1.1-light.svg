@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="168" viewBox="0 0 300 168" role="img" aria-label="ยอดดาวน์โหลด 13">
+<rect x="0.5" y="0.5" width="299" height="167" rx="13.5" fill="#ffffff" stroke="#e6e1db"/>
+<text x="20" y="29" font-size="11.5" fill="#8b8680" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans Thai',sans-serif" letter-spacing=".4">ยอดดาวน์โหลด</text>
+<text x="280" y="29" font-size="11.5" fill="#8b8680" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace">v1.1</text>
+<line x1="0" y1="45" x2="300" y2="45" stroke="#f0ece7"/>
+<text x="20" y="68" font-size="12.5" fill="#57534e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans Thai',sans-serif">macOS</text><text x="280" y="68" font-size="12.5" font-weight="600" fill="#2b2926" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace">2</text><text x="20" y="94" font-size="12.5" fill="#57534e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans Thai',sans-serif">Windows</text><text x="280" y="94" font-size="12.5" font-weight="600" fill="#2b2926" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace">8</text><text x="20" y="120" font-size="12.5" fill="#57534e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans Thai',sans-serif">Windows zip</text><text x="280" y="120" font-size="12.5" font-weight="600" fill="#2b2926" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace">3</text>
+<line x1="0" y1="130" x2="300" y2="130" stroke="#f0ece7"/>
+<text x="20" y="154" font-size="12.5" font-weight="600" fill="#2b2926" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans Thai',sans-serif">รวม</text>
+<text x="280" y="156" font-size="17" font-weight="700" fill="#c8552f" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace">13</text>
+</svg>

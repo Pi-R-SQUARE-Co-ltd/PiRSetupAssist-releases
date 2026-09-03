@@ -1,4 +1,4 @@
-name: อัปเดตการ์ดยอดดาวน์โหลด
+name: Update download cards
 
 # การ์ดใน badges/ เป็นภาพนิ่ง ตัวเลขจึงต้องมีคนวาดใหม่ให้
 # รอบทุก 6 ชั่วโมงพอ เพราะยอดดาวน์โหลดไม่ใช่ของที่ต้องเห็นทันที
@@ -23,16 +23,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: วาดการ์ดใหม่จากยอดล่าสุด
+      - name: Render cards from the latest counts
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 tools/render-download-cards.py
 
       # commit เฉพาะตอนตัวเลขขยับจริง ไม่งั้นจะมี commit เปล่าทุก 6 ชั่วโมง
-      - name: บันทึกถ้ามีอะไรเปลี่ยน
+      - name: Commit if the numbers moved
         run: |
           if [ -z "$(git status --porcelain badges)" ]; then
-            echo "ยอดเท่าเดิม ไม่ต้อง commit"
+            echo "counts unchanged, nothing to commit"
             exit 0
           fi
           git config user.name  "github-actions[bot]"

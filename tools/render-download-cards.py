@@ -24,7 +24,7 @@ DIST_FILES = {
     "PiRSetupAssist-macOS.zip":   "macOS",
     "PiRSetupAssist-Windows.exe": "Windows",
     "PiRSetupAssist-Windows.zip": "Windows zip",
-    "PiRSetupAssist-1.0.zip":     "รุ่นแรก",      # v1.0 ยังไม่ได้แยกไฟล์ตามระบบ
+    "PiRSetupAssist-1.0.zip":     "first release",  # v1.0 ยังไม่ได้แยกไฟล์ตามระบบ
 }
 
 FONT = ("-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',"
@@ -70,7 +70,7 @@ def card(title, right, rows, theme):
     chip_bg, label_c, value_c, lead_bg, lead_fg = THEMES[theme]
     H, PAD, GAP = 30, 13, 8
     total = sum(n for _, n in rows)
-    segs = [("รวม", total, True)] + [(l, n, False) for l, n in rows]
+    segs = [("total", total, True)] + [(l, n, False) for l, n in rows]
 
     x, out = 0.0, []
     for label, n, lead in segs:
@@ -109,11 +109,11 @@ def main():
     grand = {}
     for rel in releases:
         rows = rows_of(rel["assets"])
-        write(rel["tag_name"], "ยอดดาวน์โหลด", rel["tag_name"], rows)
+        write(rel["tag_name"], "downloads", rel["tag_name"], rows)
         for name, n in rows:
             grand[name] = grand.get(name, 0) + n
     order = [l for l in DIST_FILES.values() if l in grand]
-    write("all", "ยอดดาวน์โหลดทั้งหมด", f"{len(releases)} รุ่น",
+    write("all", "downloads", f"{len(releases)} releases",
           [(l, grand[l]) for l in order])
     print(f"วาดแล้ว {len(releases)} รุ่น + ใบรวม · รวมทุกไฟล์ {sum(grand.values()):,} ครั้ง")
 

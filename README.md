@@ -19,7 +19,7 @@ where each version shows its own download count.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-dark.svg">
-  <img src="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-light.svg" alt="Download counts" width="300">
+  <img src="https://raw.githubusercontent.com/Pi-R-SQUARE-Co-ltd/PiRSetupAssist-releases/main/badges/all-light.svg" alt="Download counts">
 </picture>
 
 These counts come from GitHub and are refreshed automatically.

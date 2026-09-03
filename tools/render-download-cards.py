@@ -32,10 +32,15 @@ FONT = ("-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',"
 MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace"
 
 THEMES = {
-    #        พื้น       ขอบ        เส้นคั่น   หัวข้อ    ป้ายแถว   ตัวเลข    เน้น
-    "light": ("#ffffff", "#e6e1db", "#f0ece7", "#8b8680", "#57534e", "#2b2926", "#c8552f"),
-    "dark":  ("#161514", "#2e2b28", "#252220", "#8b8680", "#a8a29e", "#ece9e5", "#e8825d"),
+    #        พื้นชิป    ตัวอักษร  ตัวเลข     ชิปเน้น    ตัวอักษรบนชิปเน้น
+    "light": ("#f1eeea", "#6b665f", "#2b2926", "#c8552f", "#ffffff"),
+    "dark":  ("#232120", "#a09a93", "#ece9e5", "#c8552f", "#ffffff"),
 }
+
+# ประมาณความกว้างตัวอักษร · ไม่ต้องเป๊ะ แค่ต้องไม่ให้ข้อความล้นชิป
+# เผื่อไว้ทางกว้างเสมอ เพราะฟอนต์บนเครื่องคนดูไม่เหมือนกัน
+W_LABEL = 6.9     # ป้ายชื่อ 11px (ไทยกับอังกฤษปนกัน)
+W_DIGIT = 7.4     # ตัวเลข mono 12px
 
 
 def api(path):
@@ -57,30 +62,36 @@ def rows_of(assets):
 
 
 def card(title, right, rows, theme):
-    """การ์ดหนึ่งใบ · หัวข้อ + รายการ + ยอดรวมล่างสุด"""
-    bg, border, rule, head, label, value, accent = THEMES[theme]
-    W = 300
-    top, line_h, foot = 46, 26, 44
-    H = top + line_h * len(rows) + foot
-    y = top + 22
-    body = []
-    for name, n in rows:
-        body.append(
-            f'<text x="20" y="{y}" font-size="12.5" fill="{label}" font-family="{FONT}">{name}</text>'
-            f'<text x="{W-20}" y="{y}" font-size="12.5" font-weight="600" fill="{value}"'
-            f' text-anchor="end" font-family="{MONO}">{n:,}</text>')
-        y += line_h
+    """แถบบาง · ชิปติดกัน ยอดรวมนำหน้าเป็นชิปสีเน้น แล้วต่อด้วยแต่ละแพลตฟอร์ม
+
+    เลือกทรงนี้เพราะเตี้ยที่สุด วางใต้เนื้อหาในหน้า release แล้วไม่แย่งความสนใจ
+    แต่ยังบอกครบทุกแพลตฟอร์มในแถวเดียว ซึ่งป้ายสำเร็จรูปทำไม่ได้
+    """
+    chip_bg, label_c, value_c, lead_bg, lead_fg = THEMES[theme]
+    H, PAD, GAP = 30, 13, 8
     total = sum(n for _, n in rows)
-    sep = y - line_h + 10
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{title} {total}">
-<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="13.5" fill="{bg}" stroke="{border}"/>
-<text x="20" y="29" font-size="11.5" fill="{head}" font-family="{FONT}" letter-spacing=".4">{title}</text>
-<text x="{W-20}" y="29" font-size="11.5" fill="{head}" text-anchor="end" font-family="{MONO}">{right}</text>
-<line x1="0" y1="45" x2="{W}" y2="45" stroke="{rule}"/>
-{"".join(body)}
-<line x1="0" y1="{sep}" x2="{W}" y2="{sep}" stroke="{rule}"/>
-<text x="20" y="{sep+24}" font-size="12.5" font-weight="600" fill="{value}" font-family="{FONT}">รวม</text>
-<text x="{W-20}" y="{sep+26}" font-size="17" font-weight="700" fill="{accent}" text-anchor="end" font-family="{MONO}">{total:,}</text>
+    segs = [("รวม", total, True)] + [(l, n, False) for l, n in rows]
+
+    x, out = 0.0, []
+    for label, n, lead in segs:
+        txt = f"{n:,}"
+        w = PAD * 2 + len(label) * W_LABEL + GAP + len(txt) * W_DIGIT
+        bg = lead_bg if lead else chip_bg
+        lf = lead_fg if lead else label_c
+        vf = lead_fg if lead else value_c
+        weight = "600" if lead else "500"
+        out.append(
+            f'<rect x="{x:.1f}" y="0" width="{w:.1f}" height="{H}" fill="{bg}"/>'
+            f'<text x="{x+PAD:.1f}" y="19.5" font-size="11" fill="{lf}"'
+            f' font-family="{FONT}">{label}</text>'
+            f'<text x="{x+w-PAD:.1f}" y="19.5" font-size="12" font-weight="{weight}"'
+            f' fill="{vf}" text-anchor="end" font-family="{MONO}">{txt}</text>')
+        x += w
+
+    W = round(x)
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{title} {total:,}">
+<defs><clipPath id="c"><rect width="{W}" height="{H}" rx="7"/></clipPath></defs>
+<g clip-path="url(#c)">{"".join(out)}</g>
 </svg>
 '''
 

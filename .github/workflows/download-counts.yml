@@ -21,7 +21,16 @@ jobs:
   render:
     runs-on: ubuntu-latest
     steps:
+      # **ต้อง checkout main ตรง ๆ ห้ามปล่อยค่าปริยาย**
+      #
+      # ตอนถูกกระตุ้นด้วย event ของ release ค่าปริยายคือ checkout ที่ tag ของรุ่นนั้น
+      # ซึ่งได้ HEAD แบบ detached · ขั้น push ท้ายงานจึงตกด้วย
+      # `fatal: You are not currently on a branch.` ทุกครั้งที่ปล่อยรุ่นหรือแก้หน้า release
+      # แล้ว GitHub ส่งอีเมลว่างานพังทุกครั้ง ทั้งที่การ์ดวาดเสร็จแล้วจริง
+      # (เจอ 3 ครั้งรวดตอนปล่อย v1.3.0 · 4 ก.ย. 2569)
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Render cards from the latest counts
         env:

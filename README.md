@@ -14,6 +14,7 @@ Always use the links below. They point at the newest release, so they never chan
 | **Windows** 10 or later | [PiRSetupAssist-Windows.exe](../../releases/latest/download/PiRSetupAssist-Windows.exe) | **Recommended.** Just download and run |
 | Windows (alternative) | [PiRSetupAssist-Windows.zip](../../releases/latest/download/PiRSetupAssist-Windows.zip) | For machines where policy blocks `.exe` files |
 
+See [what's new in the latest version](../../releases/latest).
 You can also browse every version on the [Releases](../../releases) page,
 where each version shows its own download count.
 
@@ -26,17 +27,18 @@ These counts come from GitHub and are refreshed automatically.
 
 ## Which course, and what your computer needs
 
-The app supports two courses and checks the right requirements for whichever one you pick.
-The two courses do not ask for the same things, so a computer can be fine for one and not the other.
+The app supports three courses and checks the right requirements for whichever one you pick.
+The courses do not ask for the same things, so a computer can be fine for one and not another.
 
 | Course | What it needs |
 |---|---|
 | **Claude Code** — Vibe Coding for Business | 8 GB RAM, 10 GB free. Windows 10 version 1809 or later, or macOS 14 or later |
 | **Claude Cowork** — Agentic AI for Smart Working | 8 GB RAM (16 GB recommended), 20 GB free (25 GB recommended). **Windows 10 version 2004 or later** — higher than the other course — or macOS 14 or later. On Windows the app switches on one system feature for you and asks you to restart once |
+| **Advanced Claude Cowork** — Mastering Skill & Agent System | Same as Claude Cowork, but more free space: 25 GB (30 GB recommended). Also installs Git, Node.js and Obsidian |
 
-Both courses need a Claude plan of Pro or above. The app cannot check that for you.
+All courses need a Claude plan of Pro or above. The app cannot check that for you.
 
-**Two things worth knowing before you start the Cowork course**
+**Two things worth knowing before you start either Cowork course**
 
 - **Windows on ARM** is officially supported, but a lot of people have reported that the course
   workspace does not open at all on those machines, and there is no fix yet. If you have a
@@ -55,6 +57,13 @@ Choose **More info**, then **Run anyway**.
 
 If you use the `.zip` instead, extract **all** of it first, then run `Pi R Setup Assist` from the
 extracted folder. Running it directly from inside the zip will fail.
+
+## Anonymous install data
+
+From 2.0.2 the app sends how long each install step took and whether it worked, so the team
+can see which steps are slow or fail most often. It sends no name, no computer name and none
+of your files. You can turn it off at any time under **About** (the Pi R badge) with the
+**ข้อมูลการติดตั้ง** switch.
 
 ## About the source code
 

@@ -58,11 +58,13 @@ Choose **More info**, then **Run anyway**.
 If you use the `.zip` instead, extract **all** of it first, then run `Pi R Setup Assist` from the
 extracted folder. Running it directly from inside the zip will fail.
 
-## Anonymous install data
+## Ratings and anonymous data
 
-From 2.0.2 the app sends how long each install step took and whether it worked, so the team
-can see which steps are slow or fail most often. It sends no name, no computer name and none
-of your files. You can turn it off at any time under **About** (the Pi R badge) with the
+From 2.1.0, the last screen asks you to rate the setup from one to five stars.
+
+Ratings and install step timings are processed anonymously. They help the team see which
+steps are slow or confusing. They contain no name, no computer name and none of your files.
+You can switch this off at any time under **About** (the Pi R badge) with the
 **ข้อมูลการติดตั้ง** switch.
 
 ## About the source code

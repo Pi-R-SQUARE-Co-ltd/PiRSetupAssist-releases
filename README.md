@@ -60,7 +60,7 @@ extracted folder. Running it directly from inside the zip will fail.
 
 ## Ratings and anonymous data
 
-From 2.1.0, the last screen asks you to rate the setup from one to five stars.
+The last screen asks you to rate the setup from one to five stars.
 
 Ratings and install step timings are processed anonymously. They help the team see which
 steps are slow or confusing. They contain no name, no computer name and none of your files.
